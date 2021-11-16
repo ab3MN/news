@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+a {
+  background-color: transparent;
+  text-decoration: none;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  overflow: visible;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+
+img {
+  border-style: none;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+}
