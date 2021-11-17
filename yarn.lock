@@ -2174,20 +2174,6 @@
   dependencies:
     redux "^4.0.0"
 
-"@types/redux-storage-engine-localstorage@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@types/redux-storage-engine-localstorage/-/redux-storage-engine-localstorage-1.1.1.tgz#62b38874a40985d92e82a4696701eabfbee9fd58"
-  integrity sha512-JuX/kPFhLz5iaQOc/ynQaGjSv2DdfiMWsy6Dy3qpO/J3wFEXH170aG0ma4N3DNcwMP4OqnNRK4Y2xaqk57KPrQ==
-  dependencies:
-    "@types/redux-storage" "*"
-
-"@types/redux-storage@*", "@types/redux-storage@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@types/redux-storage/-/redux-storage-4.1.0.tgz#4757f4df6d29b3ebc82693b7b1f468687d64ae1e"
-  integrity sha512-O9AeTfS8x5FFBBUCwORZkudLahIYURi4n8hIGyXKfVzik4JOYktI+FIWdNhn1CtGWBKsKg4nyc5gkkpDia/BvQ==
-  dependencies:
-    redux "^3.6.0 || ^4.0.0"
-
 "@types/resolve@0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-0.0.8.tgz#f26074d238e02659e323ce1a13d041eee280e194"
@@ -7517,25 +7503,10 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
-lodash.isfunction@^3.0.8:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
-  integrity sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==
-
-lodash.isobject@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash.isobject/-/lodash.isobject-3.0.2.tgz#3c8fb8d5b5bf4bf90ae06e14f2a530a4ed935e1d"
-  integrity sha1-PI+41bW/S/kK4G4U8qUwpO2TXh0=
-
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-
-lodash.merge@^4.3.1:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
-  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -7572,7 +7543,7 @@ loglevel@^1.6.8:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha512-Hesni4s5UkWkwCGJMQGAh71PaLUmKFM60dHvq0zi/vDhhrzuk+4GgNbTXJ12YYQJn6ZKBDNIjYcuQGKudvqrIw==
 
-loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.4.0:
+loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -9861,18 +9832,6 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-reduce-reducers@^0.1.0:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.5.tgz#ff77ca8068ff41007319b8b4b91533c7e0e54576"
-  integrity sha512-uoVmQnZQ+BtKKDKpBdbBri5SLNyIK9ULZGOA504++VbHcwouWE+fJDIo8AuESPF9/EYSkI0v05LDEQK6stCbTA==
-
-redux-actions@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-0.10.1.tgz#bb442ee37dd9643a94933e4071e089f435587135"
-  integrity sha1-u0Qu433ZZDqUkz5AceCJ9DVYcTU=
-  dependencies:
-    reduce-reducers "^0.1.0"
-
 redux-devtools-extension@^2.13.9:
   version "2.13.9"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz#6b764e8028b507adcb75a1cae790f71e6be08ae7"
@@ -9885,36 +9844,12 @@ redux-logger@^3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
-redux-storage-engine-localstorage@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/redux-storage-engine-localstorage/-/redux-storage-engine-localstorage-1.1.4.tgz#2849278d78970f0c3f5f3d4727caa3c30783ed49"
-  integrity sha1-KEknjXiXDww/Xz1HJ8qjwweD7Uk=
-
-redux-storage-merger-simple@^1.0.2:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/redux-storage-merger-simple/-/redux-storage-merger-simple-1.0.5.tgz#29a2886b0e770d9b70811aca800aa8efae89fb73"
-  integrity sha1-KaKIaw53DZtwgRrKgAqo766J+3M=
-  dependencies:
-    lodash.isobject "^3.0.2"
-    lodash.merge "^4.3.1"
-
-redux-storage@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/redux-storage/-/redux-storage-4.1.2.tgz#e06f4bdeee262aead9132fc9f7eadc67e9f9bea2"
-  integrity sha1-4G9L3u4mKurZEy/J9+rcZ+n5vqI=
-  dependencies:
-    lodash.isfunction "^3.0.8"
-    lodash.isobject "^3.0.2"
-    loose-envify "^1.2.0"
-    redux-actions "^0.10.1"
-    redux-storage-merger-simple "^1.0.2"
-
 redux-thunk@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.4.0.tgz#ac89e1d6b9bdb9ee49ce69a69071be41bbd82d67"
   integrity sha512-/y6ZKQNU/0u8Bm7ROLq9Pt/7lU93cT0IucYMrubo89ENjxPa7i8pqLKu6V4X7/TvYovQ6x01unTeyeZ9lgXiTA==
 
-"redux@^3.6.0 || ^4.0.0", redux@^4.0.0, redux@^4.1.2:
+redux@^4.0.0, redux@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.2.tgz#140f35426d99bb4729af760afcf79eaaac407104"
   integrity sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==

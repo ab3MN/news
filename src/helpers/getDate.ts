@@ -1,4 +1,4 @@
-const getDate = (): string => {
+const getDate = (week: number = 0): string => {
   const fixedDate = (x: string) => {
     const y: string = "0" + x;
     return +x < 10 ? y : x;

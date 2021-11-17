@@ -9,13 +9,15 @@ const NewsList: FC = () => {
   return (
     <ul>
       {news.map((el: INews, i) => (
-        <li key={i} className='news__list--item'>
-          <Link to={`/${i}`} className='news__list--link'>
-            <h2 className='news__list--title'>{el?.title}</h2>{" "}
-          </Link>
-          <h4>Description:</h4>
-          <p className='news__list--description'>{el?.description}</p>{" "}
-        </li>
+        <article key={i}>
+          <li className='news__list--item'>
+            <Link to={`/${el.title}`} className='news__list--link'>
+              <h3 className='news__list--title'>{el?.title}</h3>{" "}
+            </Link>
+            <h4>Description:</h4>
+            <p className='news__list--description'>{el?.description}</p>{" "}
+          </li>{" "}
+        </article>
       ))}
     </ul>
   );

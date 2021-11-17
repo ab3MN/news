@@ -1,8 +1,13 @@
 import { combineReducers } from "redux";
 import {
+  IFetchOneNewsSuccess,
+  IFetchOneNewsError,
+  fetchActionsTypes,
+  fetchOneNewsActionsType,
+} from "./newsActionsTypes";
+import {
   NEWS_TYPES,
   IFetchNewsSucces,
-  IFetchNewsStart,
   IFetchNewsError,
 } from "./newsActionsTypes";
 
@@ -15,9 +20,13 @@ const newsReducer = (state = [], { type, payload }: IFetchNewsSucces) => {
   }
 };
 
-const errorReducer = (state = "", { type, payload }: IFetchNewsError) => {
+const errorReducer = (
+  state = "",
+  { type, payload }: IFetchNewsError | IFetchOneNewsError
+) => {
   switch (type) {
     case NEWS_TYPES.FETCH_NEWS_ERROR:
+    case NEWS_TYPES.FETCH_NEWS_BY_TITLE_ERROR:
       return payload.error;
     default:
       return state;
@@ -26,14 +35,29 @@ const errorReducer = (state = "", { type, payload }: IFetchNewsError) => {
 
 const loadingReducer = (
   state = false,
-  { type }: IFetchNewsSucces | IFetchNewsError | IFetchNewsStart
+  { type }: fetchActionsTypes | fetchOneNewsActionsType
 ) => {
   switch (type) {
     case NEWS_TYPES.FETCH_NEWS_START:
+    case NEWS_TYPES.FETCH_NEWS_BY_TITILE_START:
       return true;
     case NEWS_TYPES.FETCH_NEWS_SUCCESS:
     case NEWS_TYPES.FETCH_NEWS_ERROR:
+    case NEWS_TYPES.FETCH_NEWS_BY_TITLE_ERROR:
+    case NEWS_TYPES.FETCH_NEWS_BY_TITLE_SUCCESS:
       return false;
+    default:
+      return state;
+  }
+};
+
+const oneNewsReducer = (
+  state = [],
+  { type, payload }: IFetchOneNewsSuccess
+) => {
+  switch (type) {
+    case NEWS_TYPES.FETCH_NEWS_BY_TITLE_SUCCESS:
+      return payload.oneNews;
     default:
       return state;
   }
@@ -43,4 +67,5 @@ export default combineReducers({
   news: newsReducer,
   error: errorReducer,
   isLoading: loadingReducer,
+  oneNews: oneNewsReducer,
 });

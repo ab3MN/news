@@ -1,0 +1,40 @@
+%title-set {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 590px;
+  margin: 44px auto 46px;
+  display: block;
+
+  &__input {
+    width: 590px;
+    height: 46px;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    @extend %title-set;
+    padding-bottom: 7px;
+  }
+}
+
+.news__container {
+  &--title {
+    @extend %title-set;
+    padding-bottom: 9px;
+  }
+
+  &--hr {
+    background-color: #c1c1c1;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 30px;
+  }
+}

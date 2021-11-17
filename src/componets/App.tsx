@@ -7,7 +7,7 @@ import SingleNewsPage from "../pages/SingleNewsPage";
 const App = () => {
   return (
     <Routes>
-      <Route path='/:newsId' element={<SingleNewsPage />} />
+      <Route path='/:title' element={<SingleNewsPage />} />
       <Route path='/' element={<NewsPage />} />
     </Routes>
   );
