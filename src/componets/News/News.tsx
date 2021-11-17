@@ -1,41 +1,65 @@
-import React, { FC, useEffect } from "react";
-import getDate from "../../helpers/getDate";
+import React, { FC, useEffect, useState } from "react";
+import { getDate } from "../../helpers/getDate";
 import { useDispatchAcions } from "../../hooks/useDispatchActions";
 import NewsList from "./NewsList/NewsList";
-import TextField from "@mui/material/TextField";
-import SearchIcon from "@mui/icons-material/Search";
-import InputAdornment from "@mui/material/InputAdornment";
 import "./News.scss";
+
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
+import { useTypedSelector } from "../../hooks/useTypedSelectors";
+import { INews } from "./types/NewsType";
 
 const News: FC = () => {
   const { fetchNews } = useDispatchAcions();
+  const news: Array<INews> = useTypedSelector((state) => state.news.news);
+
+  const [filter, setFilter] = useState("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    setFilter(e.target.value);
+
+  const filtredNews = news?.filter(
+    (el) =>
+      el.title.toLowerCase().includes(filter.toLowerCase()) ||
+      el.description.toLowerCase().includes(filter.toLowerCase())
+  );
 
   useEffect(() => {
-    const date = getDate();
-    fetchNews("tesla", date);
+    const today = getDate();
+    const lastWeek = getDate(7);
+    fetchNews("tesla", today, lastWeek);
   });
 
   return (
     <>
       <header className='search'>
-        <h3 className='search__title'>Filter by keywords: </h3>
-        <TextField
-          className='search__input'
-          label='Find news'
-          variant='outlined'
-          InputProps={{
-            startAdornment: (
+        <h3 className='search__title'>Filter by keywords : </h3>{" "}
+        <FormControl>
+          <InputLabel htmlFor='news__filter'>News</InputLabel>
+          <OutlinedInput
+            type='text'
+            className='search__input'
+            placeholder='Find news'
+            id='news__filter'
+            value={filter}
+            onChange={handleChange}
+            label='filter'
+            startAdornment={
               <InputAdornment position='start'>
                 <SearchIcon />
               </InputAdornment>
-            ),
-          }}
-        />
+            }
+          />{" "}
+        </FormControl>
       </header>
       <main className='news__container'>
-        <h3 className='news__container--title'>Result: 4</h3>
+        <h3 className='news__container--title'>
+          Result : {filtredNews.length || "No news"}
+        </h3>
         <div className='news__container--hr'></div>
-        <NewsList />
+        <NewsList news={filtredNews} />
       </main>
     </>
   );

@@ -33,7 +33,8 @@ export const fetchOneNews = (title: string) => {
 
 export const fetchNews = (
   query: string = "tesla",
-  date: string = "2021-10-15"
+  today: string = "2021-10-15",
+  lastWeek: string = "2021-10-15"
 ) => {
   return async (d: Dispatch<fetchActionsTypes>) => {
     try {
@@ -41,7 +42,7 @@ export const fetchNews = (
         type: NEWS_TYPES.FETCH_NEWS_START,
       });
       const res = await axios.get(
-        `/everything?q=${query}&language=en&from=${date}&sortBy=publishedAt&apiKey=${KEY}`
+        `/everything?q=${query}&language=en&from=${lastWeek}&to=${today}&sortBy=publishedAt&apiKey=${KEY}`
       );
       d({
         type: NEWS_TYPES.FETCH_NEWS_SUCCESS,

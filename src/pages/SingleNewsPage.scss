@@ -1,0 +1,22 @@
+.back__btn {
+  width: 275px;
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 89px;
+
+  &--arrow {
+    width: 103px;
+    height: 10px;
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+
+  &--text {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+  }
+}

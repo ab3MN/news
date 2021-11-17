@@ -4,8 +4,6 @@ import {
   IFetchOneNewsError,
   fetchActionsTypes,
   fetchOneNewsActionsType,
-} from "./newsActionsTypes";
-import {
   NEWS_TYPES,
   IFetchNewsSucces,
   IFetchNewsError,

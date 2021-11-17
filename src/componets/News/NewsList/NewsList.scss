@@ -1,6 +1,41 @@
-.news__list--item {
-  padding-bottom: 20px;
+%montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
-.news__list--link {
-  color: #000;
+
+.news__list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 46px;
+
+  &--item {
+    padding-bottom: 20px;
+    width: 525px;
+    height: 242px;
+  }
+
+  &--link {
+    color: #000;
+  }
+
+  &--title {
+    @extend %montserrat;
+    font-size: 24px;
+    line-height: 29px;
+    padding-bottom: 20px;
+  }
+
+  &hr {
+    @extend %montserrat;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &--description {
+    @extend %montserrat;
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

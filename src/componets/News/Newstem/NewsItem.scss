@@ -1,0 +1,30 @@
+%montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.singleNews__container {
+  margin: 113px 0 72px;
+
+  &--title {
+    @extend %montserrat;
+    font-size: 36px;
+    line-height: 44px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  &--content {
+    @extend %montserrat;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &--link {
+    color: royalblue;
+  }
+  &--link:hover {
+    color: pink;
+  }
+}

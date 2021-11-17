@@ -1,5 +1,5 @@
 %title-set {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -21,7 +21,7 @@
 
   &__title {
     @extend %title-set;
-    padding-bottom: 7px;
+    padding-bottom: 12px;
   }
 }
 

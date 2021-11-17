@@ -5,4 +5,5 @@ export interface INews {
   urlToImage: string;
   publishedAt: string;
   content: string;
+  url: string;
 }
