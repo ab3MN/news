@@ -50,11 +50,11 @@ export const fetchNews = (
           news: res.data.articles,
         },
       });
-    } catch {
+    } catch (e) {
       d({
         type: NEWS_TYPES.FETCH_NEWS_ERROR,
         payload: {
-          error: "Fetch news with some error",
+          error: e,
         },
       });
     }

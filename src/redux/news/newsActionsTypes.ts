@@ -9,7 +9,7 @@ export enum NEWS_TYPES {
   FETCH_NEWS_BY_TITLE_SUCCESS = "FETCH_NEWS_BY_TITLE_SUCCESS",
   FETCH_NEWS_BY_TITLE_ERROR = "FETCH_NEWS_BY_TITLE_ERROR",
 }
-type errorType = string;
+type errorType = any;
 
 export interface IFetchOneNewsStart {
   type: NEWS_TYPES.FETCH_NEWS_BY_TITILE_START;

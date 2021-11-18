@@ -1,16 +1,17 @@
 import React, { FC, useEffect, useState } from "react";
 import { getDate } from "../../helpers/getDate";
-import { useDispatchAcions } from "../../hooks/useDispatchActions";
 import NewsList from "./NewsList/NewsList";
 import "./News.scss";
-
-import OutlinedInput from "@mui/material/OutlinedInput";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import SearchIcon from "@mui/icons-material/Search";
+import { useDispatchAcions } from "../../hooks/useDispatchActions";
 import { useTypedSelector } from "../../hooks/useTypedSelectors";
 import { INews } from "./types/NewsType";
+import {
+  OutlinedInput,
+  FormControl,
+  InputLabel,
+  InputAdornment,
+} from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const News: FC = () => {
   const [filter, setFilter] = useState("");
