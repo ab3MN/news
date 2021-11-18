@@ -18,7 +18,7 @@ const News: FC = () => {
   const news: Array<INews> = useTypedSelector((state) => state.news.news);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setFilter(e.target.value.toLowerCase());
+    setFilter(e.target.value);
 
   /*Fetch*/
   const { fetchNews } = useDispatchAcions();
@@ -30,8 +30,8 @@ const News: FC = () => {
 
   const filtredNews = news.filter(
     (el) =>
-      el?.title?.toLowerCase().includes(filter) ||
-      el?.description?.toLowerCase().includes(filter)
+      el?.title?.toLowerCase().includes(filter.toLowerCase()) ||
+      el?.description?.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (

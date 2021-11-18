@@ -22,10 +22,10 @@ export const fetchOneNews = (title: string) => {
         type: NEWS_TYPES.FETCH_NEWS_BY_TITLE_SUCCESS,
         payload: { oneNews: res?.data?.articles },
       });
-    } catch {
+    } catch (e) {
       d({
         type: NEWS_TYPES.FETCH_NEWS_BY_TITLE_ERROR,
-        payload: { error: "Fetch news with some error" },
+        payload: { error: e },
       });
     }
   };
