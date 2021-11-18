@@ -13,24 +13,25 @@ import { useTypedSelector } from "../../hooks/useTypedSelectors";
 import { INews } from "./types/NewsType";
 
 const News: FC = () => {
-  const { fetchNews } = useDispatchAcions();
+  const [filter, setFilter] = useState("");
   const news: Array<INews> = useTypedSelector((state) => state.news.news);
 
-  const [filter, setFilter] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setFilter(e.target.value);
+    setFilter(e.target.value.toLowerCase());
 
-  const filtredNews = news?.filter(
-    (el) =>
-      el.title.toLowerCase().includes(filter.toLowerCase()) ||
-      el.description.toLowerCase().includes(filter.toLowerCase())
-  );
-
+  /*Fetch*/
+  const { fetchNews } = useDispatchAcions();
   useEffect(() => {
     const today = getDate();
     const lastWeek = getDate(7);
-    fetchNews("tesla", today, lastWeek);
-  });
+    fetchNews("tesla", today, lastWeek); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const filtredNews = news.filter(
+    (el) =>
+      el?.title?.toLowerCase().includes(filter) ||
+      el?.description?.toLowerCase().includes(filter)
+  );
 
   return (
     <>
@@ -59,7 +60,7 @@ const News: FC = () => {
           Result : {filtredNews.length || "No news"}
         </h3>
         <div className='news__container--hr'></div>
-        <NewsList news={filtredNews} />
+        <NewsList news={filtredNews} filter={filter} />
       </main>
     </>
   );

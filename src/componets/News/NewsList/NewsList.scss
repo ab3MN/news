@@ -6,7 +6,7 @@
 
 .news__list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 46px;
 
@@ -32,10 +32,20 @@
     font-size: 18px;
     line-height: 22px;
   }
+  &--description-title {
+    @extend %montserrat;
+    padding-bottom: 8px;
+    font-size: 18px;
+    line-height: 22px;
+  }
 
   &--description {
     @extend %montserrat;
     font-size: 16px;
     line-height: 20px;
   }
+}
+
+.hightlight {
+  background-color: yellow;
 }

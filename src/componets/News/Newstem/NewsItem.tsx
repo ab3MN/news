@@ -13,7 +13,7 @@ const NewsItem: FC<INewsProp> = ({ data }) => {
     <section className='singleNews__container'>
       <h2 className='singleNews__container--title'>{data?.title}</h2>
       <p className='singleNews__container--content'>
-        {data?.content.slice(0, -13)}...
+        {data?.content.slice(0, -13)}
         <span>
           <Link
             to={data.url}

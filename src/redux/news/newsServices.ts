@@ -47,7 +47,7 @@ export const fetchNews = (
       d({
         type: NEWS_TYPES.FETCH_NEWS_SUCCESS,
         payload: {
-          news: res?.data?.articles,
+          news: res.data.articles,
         },
       });
     } catch {
