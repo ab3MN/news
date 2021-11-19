@@ -8,12 +8,13 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 46px;
+  margin-bottom: 26px;
 
   &--item {
     padding-bottom: 20px;
     width: 525px;
-    height: 242px;
+    height: 100%;
+    margin-bottom: 20px;
   }
 
   &--link {
