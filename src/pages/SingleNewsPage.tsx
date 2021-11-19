@@ -6,13 +6,15 @@ import { useDispatchAcions } from "../hooks/useDispatchActions";
 import { useTypedSelector } from "../hooks/useTypedSelectors";
 import { INews } from "../componets/News/types/NewsType";
 import { getTitle } from "../helpers/getTitle";
+import { replaceLetters } from "../helpers/replaceLetters";
 import "./SingleNewsPage.scss";
 
 const SingleNewsPage: FC = () => {
   const location = useLocation();
-  const title = getTitle(location.pathname);
+  const title = replaceLetters(getTitle(location.pathname), "汉", "/");
   const [isHovered, setHovered] = useState(false);
 
+  console.log(title);
   let navigate = useNavigate();
 
   const { fetchOneNews } = useDispatchAcions();
@@ -21,7 +23,7 @@ const SingleNewsPage: FC = () => {
   useEffect(() => {
     fetchOneNews(title);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, [title]);
 
   const handleGoBack = () => {
     navigate("/");

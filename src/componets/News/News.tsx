@@ -16,18 +16,16 @@ import SearchIcon from "@mui/icons-material/Search";
 const News: FC = () => {
   const [filter, setFilter] = useState("");
   const news: Array<INews> = useTypedSelector((state) => state.news.news);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    setFilter(e.target.value);
-
-  /*Fetch*/
   const { fetchNews } = useDispatchAcions();
+
   useEffect(() => {
     const today = getDate();
     const lastWeek = getDate(7);
     fetchNews("tesla", today, lastWeek); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
+    setFilter(e.target.value);
   const filtredNews = news.filter(
     (el) =>
       el?.title?.toLowerCase().includes(filter.toLowerCase()) ||
