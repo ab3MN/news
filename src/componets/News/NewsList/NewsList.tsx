@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { INews } from "../types/NewsType";
 import HightLight from "../../../helpers/HightLight";
 import "./NewsList.scss";
-import { replaceLetters } from "../../../helpers/replaceLetters";
 
 interface INewsListProps {
   news: INews[];
@@ -22,7 +21,7 @@ const NewsList: FC<INewsListProps> = ({ news, filter }) => {
         <article key={i} className='news__list--item'>
           <li>
             <Link
-              to={`/${replaceLetters(el?.title, "/", "汉")}`}
+              to={`/${el?.title.replace(/\//g, "汉")}`}
               className='news__list--link'>
               <h3 className='news__list--title'>{light(el?.title)}</h3>{" "}
             </Link>

@@ -4,7 +4,7 @@ import NewsList from "./NewsList/NewsList";
 import "./News.scss";
 import { useDispatchAcions } from "../../hooks/useDispatchActions";
 import { useTypedSelector } from "../../hooks/useTypedSelectors";
-import { INews } from "./types/NewsType";
+import { INewSelectorsProps } from "./types/NewsType";
 import {
   OutlinedInput,
   FormControl,
@@ -12,10 +12,13 @@ import {
   InputAdornment,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import MyLoader from "../../shared/MyLoader";
 
 const News: FC = () => {
   const [filter, setFilter] = useState("");
-  const news: Array<INews> = useTypedSelector((state) => state.news.news);
+  const { news, isLoading }: INewSelectorsProps = useTypedSelector(
+    (state) => state.news
+  );
   const { fetchNews } = useDispatchAcions();
 
   useEffect(() => {
@@ -54,13 +57,17 @@ const News: FC = () => {
           />{" "}
         </FormControl>
       </header>
-      <main className='news__container'>
-        <h3 className='news__container--title'>
-          Result : {filtredNews.length || "No news"}
-        </h3>
-        <div className='news__container--hr'></div>
-        <NewsList news={filtredNews} filter={filter} />
-      </main>
+      {isLoading ? (
+        <MyLoader />
+      ) : (
+        <main className='news__container'>
+          <h3 className='news__container--title'>
+            Result : {filtredNews.length || "No news"}
+          </h3>
+          <div className='news__container--hr'></div>
+          <NewsList news={filtredNews} filter={filter} />
+        </main>
+      )}
     </>
   );
 };

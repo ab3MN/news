@@ -7,3 +7,10 @@ export interface INews {
   content: string;
   url: string;
 }
+
+export interface INewSelectorsProps {
+  news: INews[];
+  isLoading: boolean;
+  error: any;
+  oneNews: INews[];
+}

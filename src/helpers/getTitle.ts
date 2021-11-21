@@ -1,8 +1,2 @@
 export const getTitle = (title: string): string =>
-  title.slice(1, 3) +
-  title
-    .slice(1)
-    .replace(/%/g, " ")
-    .split(" ")
-    .map((el) => el.slice(2))
-    .join(" ");
+  title.slice(1).replace(/%20/g, " ");
